@@ -1,0 +1,78 @@
+theme: default # default || dark
+organization: null
+twitter: null
+title: 'A survey of recent advances and challenges in Human-Robot
+Interaction using Sign Language'
+journal: "Humanoids'24"
+resources:
+  paper: https://openreview.net/
+  arxiv: null
+  code: https://github.com/iyeszin/hri_sl_ros2
+  video: null
+  huggingface: null
+description: null
+
+image: https://denkiwakame.github.io/academic-project-template/assets/teaser.png
+url: https://denkiwakame.github.io/academic-project-template
+speakerdeck: # speakerdeck slide ID
+authors:
+  - name: Iye Szin Ang*
+    affiliation: [1]
+    url: https://cps.unileoben.ac.at/iye-szin-ang-m-sc/
+    position: PhD student
+  - name: Fotios Lygerakis
+    affiliation: [1]
+    position: PhD student
+    url: https://cps.unileoben.ac.at/fotios-lygerakis-m-sc/
+  - name: Prof. Elmar Rueckert
+    affiliation: [1]
+    position: Researcher
+    url: https://cps.unileoben.ac.at/prof-elmar-rueckert/
+affiliations:
+  - Chair of the Cyber-Physical-Systems, Montanuniversität Leoben in Austria
+meta:
+  - '*iye.ang@unileoben.ac.at'
+# bibtex: null
+teaser: workflow.png
+abstract: |
+  This paper explores recent developments in the recognition of American Sign Language (ASL) to enhance human-robot interaction (HRI). Current methods utilizing publicly available datasets are reviewed to identify their contributions and areas for improvement. A comprehensive survey of the literature is conducted, emphasizing the integration of ASL recognition systems within a ROS2-based framework to improve communication accessibility. The study examines the effectiveness of using landmarks to improve the accuracy of fingerspelling recognition. These findings offer practical insights for advancing ASL recognition systems and underscore the need for more integrated approaches in HRI.
+body:
+  - title: Comparison of Existing Methods and Datasets in Sign Language Processing
+    text: |
+      | Author(s)     | Language Level | Task Type | Method | Dataset | Integ. with Robot |
+      |----------|----------------|-----------|--------|---------|-------------------|
+      | *This study | Isolated | Fingerspelling | CNN | [Sign Language MNIST](https://www.kaggle.com/datasets/datamunge/sign-language-mnist) | Yes |
+      |[Shi, Bowen and et al.](https://openaccess.thecvf.com/content_ICCV_2019/html/Shi_Fingerspelling_Recognition_in_the_Wild_With_Iterative_Visual_Attention_ICCV_2019_paper.html)| Isolated | Fingerspelling | Iterative attention model | [ChicagoFSWild](https://home.ttic.edu/~klivescu/ChicagoFSWild.htm); [ChicagoFSWild+](https://home.ttic.edu/~klivescu/ChicagoFSWild.htm)  | No |
+      |[Pathan, Refat Khan and et al.](https://www.nature.com/articles/s41598-023-43852-x)| Isolated | Fingerspelling | Multi-headed CNN | [ASL Fingerspelling A](https://empslocal.ex.ac.uk/people/staff/np331/index.php?section=FingerSpellingDataset) | No |
+      |[Kapuscinski, Tomasz and et al.](https://journals.sagepub.com/doi/full/10.5772/60091)| Isolated | Fingerspelling | Utilizes depth cameras to recognize hand gestures | [ASL Postures Dataset](https://lttm.dei.unipd.it/downloads/); [Polish Finger Alphabet Dataset](https://vision.kia.prz.edu.pl/); [ASL Fingerspelling B](https://empslocal.ex.ac.uk/people/staff/np331/index.php?section=FingerSpellingDataset) | No |
+      | *This study | Isolated | Fingerspelling | Enc-Dec Model | [Google - ASL Fingerspelling Recognition](https://www.kaggle.com/competitions/asl-fingerspelling/data) | Yes |
+      |[Metaxas, Dimitris and et al.](https://par.nsf.gov/biblio/10065367)| Isolated | Word Recognition | NN feature extractor with a modified Hidden Conditional Ordinal Random Field (HCORF)| [ASLLVD](https://www.bu.edu/asllrp/av/dai-asllvd.html) | No |
+      |[Bilge, Yunus Can and et al.](https://ieeexplore.ieee.org/abstract/document/9681230?casa_token=sn3cwmPYx8oAAAAA:UEwRrqs0-pA1SCSGZLGvvikM9OaWNgz0mFRJVHcgnRzqCuEBcnLn4hhEJbfQzonUniaQhuakgxC9aQ)| Isolated | Word Recognition |  A spatiotemporal model | [ASLLVD](https://www.bu.edu/asllrp/av/dai-asllvd.html) | No |
+      |[Liu, Yupeng and et al.](https://openurl.ebsco.com/EPDB%3Agcd%3A7%3A6657383/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A142014891&crl=c)| Isolated | Word Recognition | 2D CNN | [MSR Gesture 3D](https://sites.google.com/view/wanqingli/data-sets/msr-gesture3d?authuser=0) | No |
+      |[Li, Dongxu and et al.](https://openaccess.thecvf.com/content_WACV_2020/html/Li_Word-level_Deep_Sign_Language_Recognition_from_Video_A_New_Large-scale_WACV_2020_paper.html)| Isolated | Word Recognition | Pose-GRU; Pose-TGCN; VGG-GRU; I3D | [Purdue RVL-SLLL ASL Database](https://engineering.purdue.edu/RVL/Database/ASL/asl-database-front.htm); [Boston ASLLVD](https://www.bu.edu/asllrp/av/dai-asllvd.html); [RWTH-BOSTON-50 Database](https://www-i6.informatik.rwth-aachen.de/aslr/database-rwth-boston-50.php); [WLASL](https://dxli94.github.io/WLASL/) | No |
+      |[Izutov, Evgeny](https://arxiv.org/abs/2004.05054)| Isolated | Word Recognition | S3D framework with MobileNet-V3 backbone | [MS-ASL1000](https://www.microsoft.com/en-us/research/project/ms-asl/overview/) | No |
+      |[Zuo, Ronglai and et al.](https://openaccess.thecvf.com/content/CVPR2023/html/Zuo_Natural_Language-Assisted_Sign_Language_Recognition_CVPR_2023_paper.html)| Isolated | Word Recognition | Video-keypoint network(VKNet) | [MS-ASL1000](https://www.microsoft.com/en-us/research/project/ms-asl/overview/); [WLASL](https://dxli94.github.io/WLASL/); [NMFs-CSL](https://ustc-slr.github.io/datasets/2020_nmfs_csl/) | No |
+      | - | Isolated | Word Recognition | - | [Google - Isolated Sign Language Recognition](https://www.kaggle.com/competitions/asl-signs/data) | - |
+      |[Matyáš Boháček, Marek Hrúz](https://openaccess.thecvf.com/content/WACV2022W/HADCV/html/Bohacek_Sign_Pose-Based_Transformer_for_Word-Level_Sign_Language_Recognition_WACVW_2022_paper.html)| Isolated | Word Recognition | Video-keypoint network(VKNet) | [WLASL](https://dxli94.github.io/WLASL/); [LSA64]() | No |
+      |[Dreuw, Philippe and et al.](https://www-i6.informatik.rwth-aachen.de/publications/download/658/Dreuw-CSLT%202010-2010.pdf)| Continous | Continuous Signing | CNN | [RWTH-BOSTON-104 Database](https://www-i6.informatik.rwth-aachen.de/aslr/database-rwth-boston-104.php); [Corpus NGT]() | No |
+
+
+       
+      
+      
+
+  - title: The HSI-SL framework
+    text: |
+      Our research introduced a ROS2-based framework specifically designed for fingerspelling recognition, implemented with a realistic dexterous robot hand to simulate human-like movements. The framework seamlessly integrates a deep learning-based inference node for gesture recognition, a chat agent node for processing and response generation, and a hand position controller node to manage the robotic hand's movements, ensuring fluid communication.
+
+# projects: # relevant projects
+#   - title: Relevant Project I
+#     description: abstract text
+#     img: assets/teaser.png
+#     journal: "ABCD'23"
+#     url: https://denkiwakame.github.io/academic-project-template/
+#   - title: Relvant Project II
+#     description: abstract text
+#     img: assets/teaser.png
+#     journal: "EFGR'22"
+#     url: https://denkiwakame.github.io/academic-project-template/
