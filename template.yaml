@@ -65,7 +65,7 @@ body:
     text: |
       Key insights into the effectiveness of a predictive text system are shown by the Table 1 and Table 2 that compares original sentences with their matching predicted sentences from both training and validation sets. Typical mistakes show potential areas for model improvement, such as phonetically similar but incorrect substitutions and improper initial letters. Including methods for correcting mistakes, along with additional training focused on improving sensitivity to the beginnings of words and sentences, could be beneficial.
 
-      Table 1: Sample of Original and Predicted Sentences in the Train Set for Method 1
+      Table 1: Sample of Original and Predicted Sentences in the Train Set for EDN-156
       | Index | Original Sentence | Predicted Sentence |
       |----------|----------------|-----------|
       | 1 | stability of the nation | ttay nity of the nation |
@@ -74,7 +74,7 @@ body:
       | 4 | the store will close at ten | the ptock eill close at ten |
       | 5 | express delivery is very fast | txeress delivery is very fast |
 
-      Table 2: Sample of Original and Predicted Sentences in the Validation Set for Method 1
+      Table 2: Sample of Original and Predicted Sentences in the Validation Set for EDN-156
       | Index | Original Sentence | Predicted Sentence |
       |----------|----------------|-----------|
       | 1 | listen to five hours of opera | thnhfr thafive hours of opera |
